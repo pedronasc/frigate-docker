@@ -27,7 +27,16 @@ services:
       - "8555:8555/udp" # WebRTC over udp
     network_mode: host
     environment:
-      FRIGATE_RTSP_PASSWORD: "password"
+      FRIGATE_RTSP_USER1: ${CAM1_USER}
+      FRIGATE_RTSP_PASSWORD1: ${CAM1_PASS}
+      FRIGATE_RTSP_HOST1: ${CAM1_HOST}
 
+      FRIGATE_RTSP_USER2: ${CAM2_USER}
+      FRIGATE_RTSP_PASSWORD2: ${CAM2_PASS}
+      FRIGATE_RTSP_HOST2: ${CAM2_HOST}
+
+      FRIGATE_RTSP_USER3: ${CAM3_USER}
+      FRIGATE_RTSP_PASSWORD3: ${CAM3_PASS}
+      FRIGATE_RTSP_HOST3: ${CAM3_HOST}
 volumes:
   storage:
