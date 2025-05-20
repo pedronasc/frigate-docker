@@ -1,0 +1,62 @@
+mqtt:
+  enabled: false
+
+detectors:
+  cpu1:
+    type: cpu
+    
+record:
+  enabled: True
+  retain:
+    days: 7
+    mode: motion
+  alerts:
+    retain:
+      days: 30
+  detections:
+    retain:
+      days: 30
+
+snapshots:
+  enabled: True
+  retain:
+    default: 30
+    
+cameras:
+  CAMERA_1:
+    enabled: true
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:m0t0rSr4d@172.30.3.89:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - detect
+    detect:
+      enabled: true
+      width: 1280
+      height: 720
+    objects:
+      track:
+        - person
+        - dog
+        - cat
+        - car
+
+  CAMERA_2:
+    enabled: true
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:m0t0rSr4d@172.30.3.90:554/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - detect
+    detect:
+      enabled: true
+      width: 1280
+      height: 720
+    objects:
+      track:
+        - person
+        - dog
+        - cat
+        - car
+version: 0.15-1
+
