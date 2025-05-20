@@ -1,5 +1,5 @@
 mqtt:
-  enabled: false
+  enabled: true
   host: 172.30.10.2 
   user: "mqtt_user"
   port: 1883
@@ -17,16 +17,16 @@ record:
     mode: motion
   alerts:
     retain:
-      days: 3
+      days: 1
   detections:
     retain:
-      days: 3
+      days: 1
 
 snapshots:
   enabled: True
   bounding_box: true
   retain:
-    default: 3
+    default: 1
 
 cameras:
   CAMERA_1:
