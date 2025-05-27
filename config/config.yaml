@@ -1,10 +1,11 @@
 mqtt:
   enabled: true
-  host: "{{ MQTT_HOST }}"
-  user: "{{ MQTT_USER }}"
+  host: 172.30.10.2
+  user: mqtt_user
+  password: mqtt2025*
   port: 1883
-  password: "{{ MQTT_PASSWORD }}"
-  topic_prefix: "{{ MQTT_TOPIC_PREFIX }}"
+  topic_prefix: frigate/events
+  client_id: "frigate01"
 
 detectors:
   cpu1:
@@ -52,24 +53,6 @@ cameras:
     ffmpeg:
       inputs:
         - path: rtsp://{FRIGATE_RTSP_USER2}:{FRIGATE_RTSP_PASSWORD2}@{FRIGATE_RTSP_HOST2}/cam/realmonitor?channel=1&subtype=0
-          roles:
-            - detect
-    detect:
-      enabled: true
-      width: 1280
-      height: 720
-    objects:
-      track:
-        - person
-        - dog
-        - cat
-        - car
-
-  CAMERA_3:
-    enabled: true
-    ffmpeg:
-      inputs:
-        - path: rtsp://{FRIGATE_RTSP_USER3}:{FRIGATE_RTSP_PASSWORD3}@{FRIGATE_RTSP_HOST3}/cam/realmonitor?channel=1&subtype=0
           roles:
             - detect
     detect:
