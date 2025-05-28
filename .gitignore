@@ -1,2 +1,4 @@
+!/config/config.template.yaml
 /storage/*
 .env
+/config/*
