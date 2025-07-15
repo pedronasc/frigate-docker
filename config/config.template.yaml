@@ -66,4 +66,23 @@ cameras:
         - cat
         - car
 
+  CAMERA_3:
+    enabled: true
+    ffmpeg:
+      inputs:
+        - path: rtsp://${FRIGATE_CAM3_USER}:${FRIGATE_CAM3_PASS}@${FRIGATE_CAM3_HOST}/cam/realmonitor?channel=1&subtype=0
+          roles:
+            - detect
+    detect:
+      enabled: true
+      width: 1280
+      height: 720
+    objects:
+      track:
+        - person
+        - dog
+        - cat
+        - car
+
+
 version: 0.15-1
